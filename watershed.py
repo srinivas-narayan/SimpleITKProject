@@ -7,7 +7,6 @@ labels = sitk.GetArrayFromImage(labels)
 #help(sitk.IsolatedWatershed)
 
 shed = sitk.IsolatedWatershed(image, [70, 134, 139], [126, 162, 153])
-sitk.WriteImage(shed, 'shed.nii')
 
 #shed = sitk.ReadImage('shed.nii')
 
@@ -28,4 +27,5 @@ shed = shed_data.astype(float) / shed_data.max() * 255
 shed = sitk.GetImageFromArray(shed)
 
 
+sitk.WriteImage(shed, 'shed.nii')
 sitk.Show(shed)
